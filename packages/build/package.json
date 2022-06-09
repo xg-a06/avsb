@@ -1,0 +1,22 @@
+{
+  "name": "@avsb/build",
+  "version": "0.1.0",
+  "description": "a very simple build build module",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xg-a06/avsb.git"
+  },
+  "keywords": [],
+  "author": "xg-a06 <xg.jser@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/xg-a06/avsb/issues"
+  },
+  "homepage": "https://github.com/xg-a06/avsb#readme",
+  "scripts": {
+    "start": "tsc --build ./src -w",
+    "build": "tsc --build ./src --module commonjs --outDir dist"
+  },
+  "dependencies": {}
+}
