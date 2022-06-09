@@ -3,6 +3,7 @@ coverage
 dist
 compiled
 docs
+bin
 
 .pnpm-debug.log
 .nyc_output
@@ -20,4 +21,6 @@ docs
 *.idea
 *.log
 *.tsbuildinfo
+
+
 
