@@ -94,8 +94,8 @@
     "websocket": "^1.0.34"
   },
   "lint-staged": {
-    "packages/src/*.{js,jsx,ts,tsx}": "eslint --cache --fix",
-    "packages/src/*.{js,css,ts,tsx}": "prettier --write"
+    "packages/**/src/*.{js,jsx,ts,tsx}": "eslint --cache --fix",
+    "packages/**/src/*.{js,css,ts,tsx}": "prettier --write"
   },
   "scripts": {
     "prepare": "husky install",
