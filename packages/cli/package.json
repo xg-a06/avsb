@@ -2,9 +2,9 @@
   "name": "@avsb/cli",
   "version": "0.1.0",
   "description": "a very simple build cli module",
-  "main": "index.js",
+  "main": "bin/index.js",
   "bin": {
-    "avsb": "lib/index.js"
+    "avsb": "bin/index.js"
   },
   "repository": {
     "type": "git",
