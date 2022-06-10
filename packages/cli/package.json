@@ -19,7 +19,7 @@
   "homepage": "https://github.com/xg-a06/avsb#readme",
   "scripts": {
     "start": "tsc --build ./src -w",
-    "build": "tsc --build ./src --module commonjs --outDir bin"
+    "build": "rimraf ./bin && tsc --build ./src --module commonjs --outDir bin"
   },
   "dependencies": {
     "@avsb/build": "workspace:^0.1.0",

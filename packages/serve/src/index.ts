@@ -1,5 +1,9 @@
-const module = {
-  name: 'serve',
+interface ServeOptions {
+  config: string;
+}
+
+const serve = (options: ServeOptions) => {
+  console.log(options);
 };
 
-export default module;
+export default serve;

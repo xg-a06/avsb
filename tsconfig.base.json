@@ -11,7 +11,8 @@
     "esModuleInterop": true,
     "typeRoots": [
       "node_modules/@types",
-      "typings"
+      "typings",
+     "packages/**/dist"
     ],
     "allowSyntheticDefaultImports": true,
     "strict": true,
