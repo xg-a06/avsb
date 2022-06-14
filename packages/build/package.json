@@ -15,7 +15,7 @@
   },
   "homepage": "https://github.com/xg-a06/avsb#readme",
   "scripts": {
-    "start": "tsc --build ./src -w",
+    "start": "tsc -w",
     "build": "tsc --build ./src --module commonjs --outDir dist"
   },
   "dependencies": {}

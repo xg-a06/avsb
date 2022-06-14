@@ -102,6 +102,8 @@
     "preinstall": "npx only-allow pnpm",
     "dev:cli": "pnpm run --filter @avsb/cli start",
     "dev:serve": "pnpm run --filter @avsb/serve start",
+    "dev:build": "pnpm run --filter @avsb/build start",
+    "dev:utils": "pnpm run --filter @avsb/utils start",
     "dev": "run-p dev:*",
     "build": "",
     "publish": ""

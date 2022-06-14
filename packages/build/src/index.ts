@@ -1,5 +1,9 @@
-const module = {
-  name: 'build',
+interface BuildOptions {
+  config: string;
+}
+
+const build = (options: BuildOptions) => {
+  console.log(options);
 };
 
-export default module;
+export default build;

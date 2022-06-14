@@ -157,15 +157,29 @@ importers:
       npm-run-all: 4.1.5
       rimraf: 3.0.2
 
+  packages/build:
+    specifiers: {}
+
   packages/cli:
     specifiers:
       '@avsb/build': workspace:^0.1.0
       '@avsb/serve': workspace:^0.1.0
+      '@avsb/utils': workspace:^0.1.0
       commander: ^9.3.0
     dependencies:
       '@avsb/build': link:../build
       '@avsb/serve': link:../serve
+      '@avsb/utils': link:../utils
       commander: 9.3.0
+
+  packages/serve:
+    specifiers:
+      '@avsb/utils': workspace:^0.1.0
+    dependencies:
+      '@avsb/utils': link:../utils
+
+  packages/utils:
+    specifiers: {}
 
 packages:
 

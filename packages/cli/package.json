@@ -24,6 +24,7 @@
   "dependencies": {
     "@avsb/build": "workspace:^0.1.0",
     "@avsb/serve": "workspace:^0.1.0",
+    "@avsb/utils": "workspace:^0.1.0",
     "commander": "^9.3.0"
   }
 }

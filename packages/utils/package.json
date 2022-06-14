@@ -1,0 +1,13 @@
+{
+  "name": "@avsb/utils",
+  "version": "0.1.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "tsc -w",
+    "build": "rimraf ./bin && tsc --module commonjs --outDir dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

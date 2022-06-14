@@ -18,5 +18,7 @@
     "start": "tsc -w",
     "build": "rimraf ./bin && tsc --module commonjs --outDir dist"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@avsb/utils": "workspace:^0.1.0"
+  }
 }
