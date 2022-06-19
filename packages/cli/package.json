@@ -1,10 +1,16 @@
 {
   "name": "@avsb/cli",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "a very simple build cli module",
   "main": "bin/index.js",
   "bin": {
     "avsb": "bin/index.js"
+  },
+  "files": [
+    "bin"
+  ],
+  "publishConfig": {
+    "access": "public"
   },
   "repository": {
     "type": "git",
@@ -19,12 +25,15 @@
   "homepage": "https://github.com/xg-a06/avsb#readme",
   "scripts": {
     "start": "tsc --build ./src -w",
-    "build": "rimraf ./bin && tsc --build ./src --module commonjs --outDir bin"
+    "build": "rimraf ./bin && tsc --build ./src "
   },
   "dependencies": {
-    "@avsb/build": "workspace:^0.1.0",
-    "@avsb/serve": "workspace:^0.1.0",
-    "@avsb/utils": "workspace:^0.1.0",
-    "commander": "^9.3.0"
+    "@avsb/build": "workspace:^0.1.2",
+    "@avsb/serve": "workspace:^0.1.2",
+    "@avsb/utils": "workspace:^0.1.2",
+    "commander": "^9.3.0",
+    "cross-env": "^7.0.3",
+    "husky": "^7.0.4",
+    "prettier": "^2.6.2"
   }
 }

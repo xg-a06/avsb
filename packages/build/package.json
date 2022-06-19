@@ -1,8 +1,14 @@
 {
   "name": "@avsb/build",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "a very simple build build module",
   "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/xg-a06/avsb.git"
@@ -16,7 +22,7 @@
   "homepage": "https://github.com/xg-a06/avsb#readme",
   "scripts": {
     "start": "tsc -w",
-    "build": "tsc --build ./src --module commonjs --outDir dist"
+    "build": "rimraf ./dist && tsc --module commonjs --outDir dist"
   },
   "dependencies": {}
 }
