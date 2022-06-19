@@ -70,8 +70,6 @@
     "postcss": "^8.4.14",
     "postcss-less": "^5.0.0",
     "postcss-loader": "^6.2.1",
-    "postcss-scss": "^4.0.2",
-    "postcss-stylus": "^0.0.1",
     "progress-bar-webpack-plugin": "^2.1.0",
     "react-refresh": "^0.11.0",
     "rollup": "^2.38.3",

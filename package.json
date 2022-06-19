@@ -19,8 +19,8 @@
   },
   "homepage": "https://github.com/xg-a06/avsb#readme",
   "lint-staged": {
-    "packages/src/*.{js,jsx,ts,tsx}": "eslint --cache --fix",
-    "packages/src/*.{js,css,ts,tsx}": "prettier --write"
+    "packages/**/src/*.{js,jsx,ts,tsx}": "eslint --cache --fix",
+    "packages/**/src/*.{js,css,ts,tsx}": "prettier --write"
   },
   "publishConfig": {
     "access": "public"
