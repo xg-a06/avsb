@@ -1,4 +1,4 @@
 import generateDevConfig from './config/devConfig';
-
-export { generateDevConfig };
-
+import generateViteConfig from './config/viteConfig';
+export { CustomConfig } from './config/typings';
+export { generateDevConfig, generateViteConfig };

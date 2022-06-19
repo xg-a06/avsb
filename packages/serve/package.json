@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "description": "a very simple build serve module",
   "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/xg-a06/avsb.git"

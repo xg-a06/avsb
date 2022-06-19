@@ -7,7 +7,7 @@ import { CustomConfig } from './typings';
 const isProd = process.env.NODE_ENV === 'production';
 
 const generateBaseConfig = (config: CustomConfig) => {
-  const { configDir, workspace = './', rootDir = 'src', path: { assetPath = 'static', tplPath = './index.html' } = {}, variables } = config;
+  const { configDir, workspace = './', rootDir = 'src', entry, path: { assetPath = 'static', tplPath = './index.html' } = {}, variables } = config;
 
   const defines = Object.entries(variables).reduce((tmp, [key, value]) => {
     tmp[key] = JSON.stringify(value);
@@ -18,6 +18,7 @@ const generateBaseConfig = (config: CustomConfig) => {
     target: 'web',
     mode: isProd ? 'production' : 'development',
     devtool: isProd ? false : 'inline-source-map',
+    entry: resolve(`${entry}`, configDir),
     resolve: {
       extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
       alias: {

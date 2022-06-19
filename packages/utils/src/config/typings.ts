@@ -2,9 +2,7 @@ interface CustomConfig {
   configDir: string;
   workspace?: string;
   rootDir?: string;
-  entry: {
-    [key: string]: Array<string>;
-  };
+  entry: string;
   devServer: any;
   alias?: {
     [key: string]: string;

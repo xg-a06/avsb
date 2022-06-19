@@ -8,9 +8,10 @@ const initialize = () => {
 
   program
     .command('serve')
+    .option('-e, --engine <engine>', '编译器webpack|vite', 'webpack')
     .option('-c, --config <filePath>', '配置文件路径', './avsb.config.js')
     .action(options => {
-      serve(options, program);
+      serve(options);
     });
 
   program.command('build').option('-c, --config <filePath>', '配置文件路径', './avsb.config.js').action(build);

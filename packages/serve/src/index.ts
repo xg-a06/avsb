@@ -1,24 +1,49 @@
 import { resolve, dirname } from 'path';
-import { generateDevConfig } from '@avsb/utils';
+import { generateDevConfig, generateViteConfig, CustomConfig } from '@avsb/utils';
 import Webpack, { Configuration } from 'webpack';
 import WebpackDevServer from 'webpack-dev-server';
+import { createServer, InlineConfig } from 'vite';
 
 interface ServeOptions {
   config: string;
+  engine: string;
 }
 
-const serve = async (options: ServeOptions, xxx: any) => {
-  console.log(options, xxx.opts());
+const startWebpack = async (options: CustomConfig) => {
+  const webpackConfig = generateDevConfig(options);
+  const compiler = Webpack(webpackConfig as unknown as Configuration);
+  const devServerOptions = { ...webpackConfig.devServer };
+  const server = new WebpackDevServer(devServerOptions, compiler);
+  await server.start();
+};
 
-  const configPath = resolve(process.cwd(), options.config);
+const startVite = async (options: CustomConfig) => {
+  const viteConfig = generateViteConfig(options);
+  const server = await createServer({
+    configFile: false,
+    ...(viteConfig as any as InlineConfig),
+  });
+  await server.listen();
+  server.printUrls();
+};
+
+const serve = async (options: ServeOptions) => {
+  const { config, engine } = options;
+  const configPath = resolve(process.cwd(), config);
   const configDir = dirname(configPath);
   const CustomConfig = await import(configPath);
   CustomConfig.configDir = configDir;
-  const config = generateDevConfig(CustomConfig);
-  const compiler = Webpack(config as unknown as Configuration);
-  const devServerOptions = { ...config.devServer };
-  const server = new WebpackDevServer(devServerOptions, compiler);
-  await server.start();
+
+  switch (engine) {
+    case 'webpack':
+      await startWebpack(CustomConfig);
+      break;
+    case 'vite':
+      await startVite(CustomConfig);
+      break;
+    default:
+      console.log('error engine');
+  }
 };
 
 export default serve;

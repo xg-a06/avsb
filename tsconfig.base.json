@@ -26,5 +26,6 @@
     "emitDecoratorMetadata": true, //启用装饰器提供元数据的支持
     "downlevelIteration": true,    //启用扩展运算符
     "jsx": "preserve",
-  }
+  },
+  "exclude": ["node_modules/**/*.json"]
 }
