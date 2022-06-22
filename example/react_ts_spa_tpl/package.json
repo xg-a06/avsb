@@ -1,0 +1,30 @@
+{
+  "name": "test_react_ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.js",
+  "scripts": {
+    "prepare": "husky install",
+    "start:webpack": "cross-env NODE_ENV=development BUILD_ENV=local webpack-dev-server --config build/webpack.dev.conf.js",
+    "start": "cross-env NODE_ENV=development avsb serve",
+    "build": "cross-env NODE_ENV=production BUILD_ENV=prod node build/build.js"
+  },
+  "pre-commit": [],
+  "author": "",
+  "license": "",
+  "devDependencies": {
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1"
+  },
+  "dependencies": {
+    "antd": "^4.18.9",
+    "axios": "^0.26.0",
+    "immer": "^9.0.12",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-error-boundary": "^3.1.4",
+    "react-query": "^3.38.0",
+    "react-router-dom": "^6.2.2",
+    "zustand": "^4.0.0-rc.1"
+  }
+}

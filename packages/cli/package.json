@@ -25,15 +25,13 @@
   "homepage": "https://github.com/xg-a06/avsb#readme",
   "scripts": {
     "start": "tsc --build ./src -w",
-    "build": "rimraf ./bin && tsc --build ./src "
+    "build": "rimraf ./bin && tsc --build ./src ",
+    "clean": "rimraf ./node_modules"
   },
   "dependencies": {
     "@avsb/build": "workspace:^0.1.2",
     "@avsb/serve": "workspace:^0.1.2",
     "@avsb/utils": "workspace:^0.1.2",
-    "commander": "^9.3.0",
-    "cross-env": "^7.0.3",
-    "husky": "^7.0.4",
-    "prettier": "^2.6.2"
+    "commander": "^9.3.0"
   }
 }

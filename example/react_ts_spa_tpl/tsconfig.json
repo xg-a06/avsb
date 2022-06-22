@@ -15,7 +15,7 @@
     ],
     "baseUrl": ".",
     "paths": {"@/*": [ "src/*" ]},
-    "types":["react/next", "react-dom/next","node"],
+    "types":["react/next", "react-dom/next","node","vite/client"],
     "allowSyntheticDefaultImports": true,
     "strict": true,
     "forceConsistentCasingInFileNames": true,

@@ -2,20 +2,16 @@ const path = require('path');
 
 module.exports = {
   env: {
-    browser: true,
+    node: true,
     es2021: true,
   },
-  extends: ['plugin:react/recommended', 'airbnb', 'prettier'],
-  ignorePatterns: '**/*.js',
+  extends: ['airbnb-base', 'prettier', 'plugin:@typescript-eslint/recommended'],
   parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
     ecmaVersion: 'latest',
     sourceType: 'module',
     parser: '@typescript-eslint/parser',
   },
-  plugins: ['react', '@typescript-eslint'],
+  plugins: ['@typescript-eslint'],
   settings: {
     'import/resolver': {
       alias: {
@@ -25,7 +21,6 @@ module.exports = {
     },
   },
   rules: {
-    'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
     'import/extensions': [
       2,
       'ignorePackages',
@@ -36,7 +31,6 @@ module.exports = {
         tsx: 'never',
       },
     ],
-    'react/function-component-definition': 0,
     'import/no-extraneous-dependencies': 0,
     'import/prefer-default-export': 0,
     'no-param-reassign': 0,

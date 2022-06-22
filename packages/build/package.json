@@ -22,7 +22,10 @@
   "homepage": "https://github.com/xg-a06/avsb#readme",
   "scripts": {
     "start": "tsc -w",
-    "build": "rimraf ./dist && tsc --module commonjs --outDir dist"
+    "build": "rimraf ./dist && tsc --module commonjs --outDir dist",
+    "clean": "rimraf ./node_modules"
   },
-  "dependencies": {}
+  "dependencies": {
+    "webpack": "5.72.1"
+  }
 }

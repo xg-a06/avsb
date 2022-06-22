@@ -9,6 +9,9 @@ const config = {
       },
     },
   },
+  path: {
+    publicPath: 'aaaa',
+  },
   variables: {
     NODE_ENV: process.env.NODE_ENV,
     API_PATH: '/api',

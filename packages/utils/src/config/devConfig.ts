@@ -15,6 +15,12 @@ const generateDevConfig = (options: CustomConfig) => {
   const baseConfig = generateBaseConfig(options);
 
   const devConfig = {
+    cache: {
+      type: 'filesystem',
+    },
+    experiments: {
+      lazyCompilation: true,
+    },
     output: {
       filename: '[name].js',
       path: resolve(distPath, configDir),
