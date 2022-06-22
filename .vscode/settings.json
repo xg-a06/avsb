@@ -4,5 +4,8 @@
   "path-intellisense.mappings": {
     "@": "${workspaceFolder}/src",
   },
-  "eslint.workingDirectories": ["./packages/**"]
+  "eslint.workingDirectories": ["./packages/**"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
 }
