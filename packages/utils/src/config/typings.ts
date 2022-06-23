@@ -1,5 +1,6 @@
 interface CustomConfig {
   configDir: string;
+  analysis?: boolean;
   workspace?: string;
   rootDir?: string;
   entry: string;

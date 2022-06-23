@@ -5,9 +5,9 @@
   "main": "src/main.js",
   "scripts": {
     "prepare": "husky install",
-    "start:webpack": "cross-env NODE_ENV=development BUILD_ENV=local webpack-dev-server --config build/webpack.dev.conf.js",
     "start": "cross-env NODE_ENV=development avsb serve",
-    "build": "cross-env NODE_ENV=production BUILD_ENV=prod node build/build.js"
+    "build": "cross-env NODE_ENV=production avsb build",
+    "preview": "cross-env NODE_ENV=production avsb preview"
   },
   "pre-commit": [],
   "author": "",
@@ -19,6 +19,7 @@
   "dependencies": {
     "antd": "^4.18.9",
     "axios": "^0.26.0",
+    "chalk": "4.0.0",
     "immer": "^9.0.12",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",

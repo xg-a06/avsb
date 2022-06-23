@@ -1,5 +1,6 @@
 const config = {
   entry: './src/index.tsx',
+  analysis: true,
   devServer: {
     port: 2233,
     proxy: {

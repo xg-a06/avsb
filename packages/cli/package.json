@@ -32,6 +32,7 @@
     "@avsb/build": "workspace:^0.1.2",
     "@avsb/serve": "workspace:^0.1.2",
     "@avsb/utils": "workspace:^0.1.2",
-    "commander": "^9.3.0"
+    "commander": "^9.3.0",
+    "@types/node": "^18.0.0"
   }
 }

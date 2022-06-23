@@ -11,6 +11,7 @@ module.exports = {
     sourceType: 'module',
     parser: '@typescript-eslint/parser',
   },
+  // ignorePatterns: [''],
   plugins: ['@typescript-eslint'],
   settings: {
     'import/resolver': {

@@ -1,22 +1,16 @@
 import { resolve as pathResolve, join } from 'path';
 import { loader } from 'mini-css-extract-plugin';
 
-const resolve = (dir: string, configDir: string) => {
-  return pathResolve(configDir, dir);
-};
+const resolve = (dir: string, configDir: string) => pathResolve(configDir, dir);
 
-const subDir = (dir: string, subDir: string) => {
-  return join(subDir, dir);
-};
+const subDir = (dir: string, dir1: string) => join(dir1, dir);
 
 const getCssLoaders = (workspace: string, rootDir: string, configDir: string) => {
-  console.log(resolve('node_modules', configDir));
-
+  console.log('aaaaaaaaa', resolve(join(workspace, 'node_modules'), configDir));
   const env = process.env.NODE_ENV;
   const isProd = env === 'production';
   const sourceMap = !isProd;
   const lastLoader = !isProd ? 'style-loader' : loader;
-  const lastLoaderOptions = !isProd ? {} : { sourceMap };
   const cssInclude = [/src/];
   const loaders = [
     {
@@ -44,7 +38,7 @@ const getCssLoaders = (workspace: string, rootDir: string, configDir: string) =>
     {
       test: /^(?!.*\.global).*\.css$/,
       use: [
-        { loader: lastLoader, options: lastLoaderOptions },
+        { loader: lastLoader },
         {
           loader: 'css-loader',
           options: {
@@ -60,7 +54,7 @@ const getCssLoaders = (workspace: string, rootDir: string, configDir: string) =>
     {
       test: /\.global\.less$/,
       use: [
-        { loader: lastLoader, options: lastLoaderOptions },
+        { loader: lastLoader },
         {
           loader: 'css-loader',
           options: { sourceMap, importLoaders: 2 },
@@ -73,7 +67,7 @@ const getCssLoaders = (workspace: string, rootDir: string, configDir: string) =>
     {
       test: /^(?!.*\.global).*\.less$/,
       use: [
-        { loader: lastLoader, options: lastLoaderOptions },
+        { loader: lastLoader },
         {
           loader: 'css-loader',
           options: {

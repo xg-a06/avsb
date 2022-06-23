@@ -10,16 +10,21 @@ import { resolve, getCssLoaders } from '../helper';
 import { CustomConfig } from './typings';
 
 const generateDevConfig = (options: CustomConfig) => {
-  const { configDir, workspace = './', rootDir = './src', devServer, path: { distPath = './dist', assetPath = 'static' } = {} } = options;
+  const { configDir, workspace = './', rootDir = 'src', devServer, path: { distPath = './dist', assetPath = 'static' } = {} } = options;
 
   const baseConfig = generateBaseConfig(options);
 
   const devConfig = {
-    cache: {
-      type: 'filesystem',
-    },
+    // cache: {
+    //   type: 'filesystem',
+    // },
     experiments: {
       lazyCompilation: true,
+    },
+    optimization: {
+      removeAvailableModules: false,
+      removeEmptyChunks: false,
+      splitChunks: false,
     },
     output: {
       filename: '[name].js',

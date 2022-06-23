@@ -47,9 +47,9 @@ const generateBaseConfig = (config: CustomConfig) => {
           include: [resolve(join(workspace, rootDir), configDir)],
           use: [
             {
-              loader: 'thread-loader', //开启多进程
+              loader: 'thread-loader', // 开启多进程
               options: {
-                workers: threads, //数量
+                workers: threads, // 数量
               },
             },
             {

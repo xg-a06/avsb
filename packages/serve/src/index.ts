@@ -1,6 +1,6 @@
 import { resolve, dirname } from 'path';
-import { generateDevConfig, CustomConfig, Webpack, Configuration } from '@avsb/utils';
-import WebpackDevServer from 'webpack-dev-server';
+import { generateDevConfig, CustomConfig, Webpack, Configuration, WebpackDevServer } from '@avsb/utils';
+
 // import { createServer, InlineConfig } from 'vite';
 
 interface ServeOptions {

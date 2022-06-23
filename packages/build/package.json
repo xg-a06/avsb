@@ -26,6 +26,7 @@
     "clean": "rimraf ./node_modules"
   },
   "dependencies": {
+    "@avsb/utils": "workspace:^0.1.2",
     "webpack": "5.72.1"
   }
 }
