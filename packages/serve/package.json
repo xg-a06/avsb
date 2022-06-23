@@ -1,6 +1,6 @@
 {
   "name": "@avsb/serve",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "a very simple build serve module",
   "main": "dist/index.js",
   "files": [
@@ -26,6 +26,6 @@
     "clean": "rimraf ./node_modules"
   },
   "dependencies": {
-    "@avsb/utils": "workspace:^0.1.2"
+    "@avsb/utils": "workspace:^0.1.3"
   }
 }
