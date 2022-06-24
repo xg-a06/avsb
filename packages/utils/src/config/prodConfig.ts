@@ -92,7 +92,7 @@ const generateBuildConfig = (options: CustomConfig) => {
       }),
       new ProgressBarPlugin({
         total: 100,
-        format: chalk.blue.bold('build ') + chalk.green.bold(':percent') + ' (:elapsed秒)',
+        format: `${chalk.blue.bold('build ') + chalk.green.bold(':percent')} (:elapsed秒)`,
       }),
     ] as Array<any>,
   };

@@ -22,7 +22,7 @@ const startWebpack = async (options: CustomConfig) => {
 //     configFile: false,
 //     ...(viteConfig as any as InlineConfig),
 //   });
-//   await server.listen();
+//   await server.listen();s
 //   server.printUrls();
 // };
 

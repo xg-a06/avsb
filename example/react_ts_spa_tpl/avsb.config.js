@@ -7,12 +7,16 @@ const config = {
       '/api': {
         target: 'http://10.0.70.49:8000',
         changeOrigin: true,
+        // pathRewrite: {
+        //   '^/xxx': '/',
+        // },
       },
     },
   },
-  path: {
-    publicPath: 'aaaa',
+  preview: {
+    port: 19000,
   },
+  path: {},
   variables: {
     NODE_ENV: process.env.NODE_ENV,
     API_PATH: '/api',

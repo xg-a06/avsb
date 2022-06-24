@@ -5,6 +5,9 @@ interface CustomConfig {
   rootDir?: string;
   entry: string;
   devServer: any;
+  preview: {
+    port: number;
+  };
   alias?: {
     [key: string]: string;
   };
