@@ -20,6 +20,7 @@ const generateBuildConfig = (options: CustomConfig) => {
 
   const prodConfig = {
     output: {
+      path: resolve(distPath, configDir),
       filename: join(assetPath, 'js/[name].[contenthash:8].js'),
       chunkFilename: join(assetPath, 'js/[name].[contenthash:8].js'),
     },
@@ -91,9 +92,7 @@ const generateBuildConfig = (options: CustomConfig) => {
       }),
       new ProgressBarPlugin({
         total: 100,
-        format: `  build [:bar] ${chalk.green.bold(':percent')} (:elapsed seconds)`,
-        clear: false,
-        width: 60,
+        format: chalk.blue.bold('build ') + chalk.green.bold(':percent') + ' (:elapsed秒)',
       }),
     ] as Array<any>,
   };

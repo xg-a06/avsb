@@ -6,7 +6,6 @@ const resolve = (dir: string, configDir: string) => pathResolve(configDir, dir);
 const subDir = (dir: string, dir1: string) => join(dir1, dir);
 
 const getCssLoaders = (workspace: string, rootDir: string, configDir: string) => {
-  console.log('aaaaaaaaa', resolve(join(workspace, 'node_modules'), configDir));
   const env = process.env.NODE_ENV;
   const isProd = env === 'production';
   const sourceMap = !isProd;
