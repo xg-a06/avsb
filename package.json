@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/xg-a06/avsb#readme",
   "lint-staged": {
-    "packages/**/src/*.{ts}": [
+    "packages/**/src/*.ts": [
       "eslint --cache --fix",
       "prettier --write"
     ]
