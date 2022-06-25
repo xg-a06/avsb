@@ -24,7 +24,6 @@ const startServer = (options: CustomConfig) => {
   const randomPort = Math.round(Math.random() * 10000 + 10000);
   const {
     configDir,
-    workspace = './',
     devServer: { proxy = {} },
     preview: { port = randomPort } = {},
     path: { distPath = './dist' } = {},
@@ -39,7 +38,6 @@ const startServer = (options: CustomConfig) => {
   app.use(async ctx => {
     const indexHtml = await readFile(`${resolve(configDir, distPath)}/index.html`);
     ctx.set('Content-Type', 'text/html; charset=utf-8');
-
     ctx.body = indexHtml.toString();
   });
 
