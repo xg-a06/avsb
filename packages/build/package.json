@@ -1,6 +1,6 @@
 {
   "name": "@avsb/build",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "a very simple build build module",
   "main": "dist/index.js",
   "files": [
@@ -26,7 +26,7 @@
     "clean": "rimraf ./node_modules"
   },
   "dependencies": {
-    "@avsb/utils": "workspace:^0.1.4",
+    "@avsb/utils": "workspace:^0.1.5",
     "webpack": "5.72.1"
   }
 }

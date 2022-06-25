@@ -1,5 +1,16 @@
 # @avsb/cli
 
+## 0.1.5
+
+### Patch Changes
+
+- feat: 增加 preview 命令
+- Updated dependencies
+  - @avsb/build@0.1.5
+  - @avsb/preview@0.1.5
+  - @avsb/serve@0.1.5
+  - @avsb/utils@0.1.5
+
 ## 0.1.4
 
 ### Patch Changes
