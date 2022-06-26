@@ -41,7 +41,7 @@ importers:
 
   packages/build:
     specifiers:
-      '@avsb/utils': workspace:^0.1.4
+      '@avsb/utils': workspace:^0.1.5
       webpack: 5.72.1
     dependencies:
       '@avsb/utils': link:../utils
@@ -49,23 +49,41 @@ importers:
 
   packages/cli:
     specifiers:
-      '@avsb/build': workspace:^0.1.4
-      '@avsb/preview': workspace:^0.1.0
-      '@avsb/serve': workspace:^0.1.4
-      '@avsb/utils': workspace:^0.1.4
+      '@avsb/build': workspace:^0.1.5
+      '@avsb/preview': workspace:^0.1.5
+      '@avsb/serve': workspace:^0.1.5
       '@types/node': ^18.0.0
       commander: ^9.3.0
     dependencies:
       '@avsb/build': link:../build
       '@avsb/preview': link:../preview
       '@avsb/serve': link:../serve
-      '@avsb/utils': link:../utils
       '@types/node': 18.0.0
       commander: 9.3.0
 
+  packages/plugins:
+    specifiers:
+      '@avsb/utils': workspace:^0.1.5
+      '@types/koa': ^2.13.4
+      '@types/koa-static': ^4.0.2
+      chalk: 4.0.0
+      koa: ^2.13.4
+      koa-http-proxy-server: ^1.0.2
+      koa-static: ^5.0.0
+      open: ^8.4.0
+    dependencies:
+      '@avsb/utils': link:../utils
+      '@types/koa': 2.13.4
+      '@types/koa-static': 4.0.2
+      chalk: 4.0.0
+      koa: 2.13.4
+      koa-http-proxy-server: 1.0.2
+      koa-static: 5.0.0
+      open: 8.4.0
+
   packages/preview:
     specifiers:
-      '@avsb/utils': workspace:^0.1.4
+      '@avsb/utils': workspace:^0.1.5
       '@types/koa': ^2.13.4
       '@types/koa-static': ^4.0.2
       chalk: 4.0.0
@@ -85,7 +103,7 @@ importers:
 
   packages/serve:
     specifiers:
-      '@avsb/utils': workspace:^0.1.4
+      '@avsb/utils': workspace:^0.1.5
     dependencies:
       '@avsb/utils': link:../utils
 

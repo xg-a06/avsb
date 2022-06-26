@@ -14,7 +14,7 @@ import { resolve, getCssLoaders } from '../helper';
 import { CustomConfig } from './typings';
 
 const generateBuildConfig = (options: CustomConfig) => {
-  const { configDir, analysis = false, workspace = './', rootDir = 'src', path: { distPath = './dist', assetPath = 'static' } = {} } = options;
+  const { configDir, analysis = false, workspace = './', rootDir = 'src', path: { publicPath = '/', distPath = './dist', assetPath = 'static' } = {} } = options;
 
   const baseConfig = generateBaseConfig(options);
 
@@ -23,6 +23,7 @@ const generateBuildConfig = (options: CustomConfig) => {
       path: resolve(distPath, configDir),
       filename: join(assetPath, 'js/[name].[contenthash:8].js'),
       chunkFilename: join(assetPath, 'js/[name].[contenthash:8].js'),
+      publicPath,
     },
     optimization: {
       removeAvailableModules: false,

@@ -15,9 +15,9 @@ const generateDevConfig = (options: CustomConfig) => {
   const baseConfig = generateBaseConfig(options);
 
   const devConfig = {
-    // cache: {
-    //   type: 'filesystem',
-    // },
+    cache: {
+      type: 'filesystem',
+    },
     experiments: {
       lazyCompilation: true,
     },
