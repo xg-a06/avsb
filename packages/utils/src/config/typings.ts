@@ -3,7 +3,7 @@ interface CustomConfig {
   analysis?: boolean;
   workspace?: string;
   rootDir?: string;
-  entry: string;
+  entry: string | Record<string, string>;
   devServer: any;
   preview: {
     port: number;
@@ -13,7 +13,7 @@ interface CustomConfig {
   };
   path: {
     distPath?: string;
-    tplPath?: string;
+    tplPath?: string | Array<object>;
     publicPath?: string;
     assetPath?: string;
   };

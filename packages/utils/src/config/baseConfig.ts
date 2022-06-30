@@ -9,18 +9,49 @@ const isProd = process.env.NODE_ENV === 'production';
 const threads = os.cpus().length / 2;
 
 const generateBaseConfig = (config: CustomConfig) => {
-  const { configDir, workspace = './', rootDir = 'src', entry, path: { assetPath = 'static', tplPath = './index.html' } = {}, variables } = config;
+  const { configDir, workspace = './', rootDir = 'src', entry, path: { assetPath = 'static', distPath = './dist', tplPath = './index.html' } = {}, variables = {} } = config;
 
   const defines = Object.entries(variables).reduce((tmp, [key, value]) => {
     tmp[key] = JSON.stringify(value);
     return tmp;
   }, {} as Record<string, string>);
 
+  let entries: string | Record<string, string> = '';
+  if (typeof entry === 'object') {
+    entries = Object.entries(entry).reduce((ret, [key, value]) => {
+      ret[key] = resolve(`${value}`, configDir);
+      return ret;
+    }, {} as Record<string, string>);
+  } else {
+    entries = resolve(`${entry}`, configDir);
+  }
+
+  const htmls = [];
+  if (Array.isArray(tplPath)) {
+    tplPath.forEach((options: any) => {
+      htmls.push(
+        new HtmlWebpackPlugin({
+          ...options,
+          template: resolve(options.template, configDir),
+          filename: options.filename,
+        }),
+      );
+    });
+  } else {
+    htmls.push([
+      new HtmlWebpackPlugin({
+        template: resolve(tplPath, configDir),
+        filename: 'index.html',
+        minify: true,
+      }),
+    ]);
+  }
+
   const baseConfig = {
     target: 'web',
     mode: isProd ? 'production' : 'development',
     devtool: isProd ? false : 'inline-source-map',
-    entry: resolve(`${entry}`, configDir),
+    entry: entries,
     resolve: {
       extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
       alias: {
@@ -93,11 +124,7 @@ const generateBaseConfig = (config: CustomConfig) => {
       ],
     },
     plugins: [
-      new HtmlWebpackPlugin({
-        template: resolve(tplPath, configDir),
-        filename: 'index.html',
-        minify: true,
-      }),
+      ...htmls,
       new DefinePlugin({
         'process.env': {
           ...defines,

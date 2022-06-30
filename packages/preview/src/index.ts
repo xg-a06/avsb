@@ -15,6 +15,9 @@ interface PreviewOptions {
 const readFile = promisify(fs.readFile);
 
 const createProxies = (app: Koa, proxy: Record<string, Record<string, string>>) => {
+  if (typeof proxy !== 'object') {
+    return;
+  }
   Object.entries(proxy).forEach(([k, v]) => {
     app.use(createProxyMiddleware(k, v));
   });
