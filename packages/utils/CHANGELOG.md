@@ -1,5 +1,11 @@
 # @avsb/utils
 
+## 0.1.7
+
+### Patch Changes
+
+- feat: 增加 override 机制,修复 loader 查找问题
+
 ## 0.1.6
 
 ### Patch Changes

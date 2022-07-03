@@ -20,6 +20,7 @@ interface CustomConfig {
   variables: {
     [key: string]: Array<string>;
   };
+  override?: (options: any) => any;
 }
 
 export { CustomConfig };

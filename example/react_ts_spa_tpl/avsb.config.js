@@ -1,3 +1,5 @@
+const path = require('path');
+
 const config = {
   entry: './src/index.tsx',
   analysis: false,
@@ -20,6 +22,11 @@ const config = {
   variables: {
     NODE_ENV: process.env.NODE_ENV,
     API_PATH: '/api',
+  },
+  override(options) {
+    delete options.module.rules[1].include;
+    options.module.rules[1].exclude = [path.resolve(__dirname, 'node_modules')];
+    return options;
   },
 };
 

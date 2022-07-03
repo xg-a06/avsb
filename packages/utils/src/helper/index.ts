@@ -9,7 +9,7 @@ const getCssLoaders = (workspace: string, rootDir: string, configDir: string) =>
   const env = process.env.NODE_ENV;
   const isProd = env === 'production';
   const sourceMap = !isProd;
-  const lastLoader = !isProd ? 'style-loader' : loader;
+  const lastLoader = !isProd ? require.resolve('style-loader') : loader;
   const cssInclude = [/src/];
   const loaders = [
     {
@@ -17,7 +17,7 @@ const getCssLoaders = (workspace: string, rootDir: string, configDir: string) =>
       use: [
         { loader: lastLoader },
         {
-          loader: 'css-loader',
+          loader: require.resolve('css-loader'),
         },
       ],
       include: resolve(join(workspace, 'node_modules'), configDir),
@@ -27,10 +27,10 @@ const getCssLoaders = (workspace: string, rootDir: string, configDir: string) =>
       use: [
         { loader: lastLoader },
         {
-          loader: 'css-loader',
+          loader: require.resolve('css-loader'),
         },
         {
-          loader: 'postcss-loader',
+          loader: require.resolve('postcss-loader'),
         },
       ],
     },
@@ -39,14 +39,14 @@ const getCssLoaders = (workspace: string, rootDir: string, configDir: string) =>
       use: [
         { loader: lastLoader },
         {
-          loader: 'css-loader',
+          loader: require.resolve('css-loader'),
           options: {
             modules: { localIdentName: '[hash:base64:6]' },
             sourceMap,
             importLoaders: 1,
           },
         },
-        { loader: 'postcss-loader', options: { sourceMap } },
+        { loader: require.resolve('postcss-loader'), options: { sourceMap } },
       ],
       include: cssInclude,
     },
@@ -55,11 +55,11 @@ const getCssLoaders = (workspace: string, rootDir: string, configDir: string) =>
       use: [
         { loader: lastLoader },
         {
-          loader: 'css-loader',
+          loader: require.resolve('css-loader'),
           options: { sourceMap, importLoaders: 2 },
         },
-        { loader: 'postcss-loader', options: { sourceMap } },
-        { loader: 'less-loader', options: { sourceMap } },
+        { loader: require.resolve('postcss-loader'), options: { sourceMap } },
+        { loader: require.resolve('less-loader'), options: { sourceMap } },
       ],
       include: resolve(join(workspace, rootDir), configDir),
     },
@@ -68,15 +68,15 @@ const getCssLoaders = (workspace: string, rootDir: string, configDir: string) =>
       use: [
         { loader: lastLoader },
         {
-          loader: 'css-loader',
+          loader: require.resolve('css-loader'),
           options: {
             modules: { localIdentName: '[hash:base64:6]' },
             sourceMap,
             importLoaders: 2,
           },
         },
-        { loader: 'postcss-loader', options: { sourceMap } },
-        { loader: 'less-loader', options: { sourceMap } },
+        { loader: require.resolve('postcss-loader'), options: { sourceMap } },
+        { loader: require.resolve('less-loader'), options: { sourceMap } },
       ],
       include: cssInclude,
     },

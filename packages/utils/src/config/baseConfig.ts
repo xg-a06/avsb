@@ -38,13 +38,13 @@ const generateBaseConfig = (config: CustomConfig) => {
       );
     });
   } else {
-    htmls.push([
+    htmls.push(
       new HtmlWebpackPlugin({
         template: resolve(tplPath, configDir),
         filename: 'index.html',
         minify: true,
       }),
-    ]);
+    );
   }
 
   const baseConfig = {
@@ -65,7 +65,7 @@ const generateBaseConfig = (config: CustomConfig) => {
           include: [resolve(join(workspace, 'node_modules/zustand/esm/middleware.js'), configDir), resolve(join(workspace, 'node_modules/react-query/es/devtools/devtools.js'), configDir), resolve(join(workspace, 'node_modules/react-query/es/devtools/utils.js'), configDir)],
           use: [
             {
-              loader: 'babel-loader',
+              loader: require.resolve('babel-loader'),
               options: {
                 cacheDirectory: true, // 开启babel编译缓存
                 cacheCompression: false, // 缓存文件不要压缩
@@ -78,13 +78,13 @@ const generateBaseConfig = (config: CustomConfig) => {
           include: [resolve(join(workspace, rootDir), configDir)],
           use: [
             {
-              loader: 'thread-loader', // 开启多进程
+              loader: require.resolve('thread-loader'), // 开启多进程
               options: {
                 workers: threads, // 数量
               },
             },
             {
-              loader: 'babel-loader',
+              loader: require.resolve('babel-loader'),
               options: {
                 cacheDirectory: true, // 开启babel编译缓存
                 cacheCompression: false, // 缓存文件不要压缩

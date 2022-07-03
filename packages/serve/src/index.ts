@@ -9,7 +9,10 @@ interface ServeOptions {
 }
 
 const startWebpack = async (options: CustomConfig) => {
-  const webpackConfig = generateDevConfig(options);
+  let webpackConfig = generateDevConfig(options);
+  if (options.override) {
+    webpackConfig = options.override(webpackConfig);
+  }
   const compiler = Webpack(webpackConfig as unknown as Configuration);
   const devServerOptions = { ...webpackConfig.devServer };
   const server = new WebpackDevServer(devServerOptions, compiler);
