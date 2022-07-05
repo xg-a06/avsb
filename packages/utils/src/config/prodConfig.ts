@@ -14,7 +14,7 @@ import { resolve, getCssLoaders } from '../helper';
 import { CustomConfig } from './typings';
 
 const generateBuildConfig = (options: CustomConfig) => {
-  const { configDir, analysis = false, workspace = './', rootDir = 'src', path: { publicPath = '/', distPath = './dist', assetPath = 'static' } = {} } = options;
+  const { configDir, analysis = false, workspace = './', rootDir = 'src', path: { publicPath = '/', distPath = './dist', assetPath = 'static' } = {}, custom = {} } = options;
 
   const baseConfig = generateBaseConfig(options);
 
@@ -119,7 +119,7 @@ const generateBuildConfig = (options: CustomConfig) => {
     );
   }
 
-  return merge(baseConfig, prodConfig as any);
+  return merge(baseConfig, prodConfig, custom);
 };
 
 export default generateBuildConfig;

@@ -20,6 +20,7 @@ interface CustomConfig {
   variables: {
     [key: string]: Array<string>;
   };
+  custom?: Record<string, any>;
   override?: (options: any) => any;
 }
 

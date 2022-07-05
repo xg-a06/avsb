@@ -10,7 +10,7 @@ import { resolve, getCssLoaders } from '../helper';
 import { CustomConfig } from './typings';
 
 const generateDevConfig = (options: CustomConfig) => {
-  const { configDir, workspace = './', rootDir = 'src', devServer, path: { distPath = './dist', assetPath = 'static' } = {} } = options;
+  const { configDir, workspace = './', rootDir = 'src', devServer, path: { distPath = './dist', assetPath = 'static' } = {}, custom = {} } = options;
 
   const baseConfig = generateBaseConfig(options);
 
@@ -63,7 +63,7 @@ const generateDevConfig = (options: CustomConfig) => {
       }),
     );
   }
-  return merge(baseConfig, devConfig as any);
+  return merge(baseConfig, devConfig, custom);
 };
 
 export default generateDevConfig;

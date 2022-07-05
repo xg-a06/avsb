@@ -23,6 +23,11 @@ const config = {
     NODE_ENV: process.env.NODE_ENV,
     API_PATH: '/api',
   },
+  custom: {
+    experiments: {
+      lazyCompilation: false,
+    },
+  },
   override(options) {
     delete options.module.rules[1].include;
     options.module.rules[1].exclude = [path.resolve(__dirname, 'node_modules')];

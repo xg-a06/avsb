@@ -1,5 +1,11 @@
 # @avsb/utils
 
+## 0.1.8
+
+### Patch Changes
+
+- feat: 增加 custom 机制,方便自定义配置
+
 ## 0.1.7
 
 ### Patch Changes
