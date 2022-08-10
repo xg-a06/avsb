@@ -13,7 +13,7 @@ interface CustomConfig {
   };
   path: {
     distPath?: string;
-    tplPath?: string | Array<object>;
+    tplPath?: string | Array<object> | boolean;
     publicPath?: string;
     assetPath?: string;
   };

@@ -9,7 +9,7 @@ const initialize = () => {
 
   program.command('serve').option('-c, --config <filePath>', '配置文件路径', './avsb.config.js').action(serve);
 
-  program.command('build').option('-c, --config <filePath>', '配置文件路径', './avsb.config.js').action(build);
+  program.command('build').option('-c, --config <filePath>', '配置文件路径', './avsb.config.js').option('-l, --lib', '是否打包库模式', false).action(build);
 
   program.command('preview').option('-c, --config <filePath>', '配置文件路径', './avsb.config.js').action(preview);
 

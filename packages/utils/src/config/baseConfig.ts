@@ -9,7 +9,7 @@ const isProd = process.env.NODE_ENV === 'production';
 const threads = os.cpus().length / 2;
 
 const generateBaseConfig = (config: CustomConfig) => {
-  const { configDir, workspace = './', rootDir = 'src', entry, path: { assetPath = 'static', distPath = './dist', tplPath = './index.html' } = {}, variables = {} } = config;
+  const { configDir, workspace = './', rootDir = 'src', entry = './src/index.js', path: { assetPath = 'static', tplPath = './index.html' } = {}, variables = {} } = config;
 
   const defines = Object.entries(variables).reduce((tmp, [key, value]) => {
     tmp[key] = JSON.stringify(value);
@@ -23,7 +23,7 @@ const generateBaseConfig = (config: CustomConfig) => {
       return ret;
     }, {} as Record<string, string>);
   } else {
-    entries = resolve(`${entry}`, configDir);
+    entries = { index: resolve(`${entry}`, configDir) };
   }
 
   const htmls = [];
@@ -37,10 +37,10 @@ const generateBaseConfig = (config: CustomConfig) => {
         }),
       );
     });
-  } else {
+  } else if (tplPath !== false) {
     htmls.push(
       new HtmlWebpackPlugin({
-        template: resolve(tplPath, configDir),
+        template: resolve(tplPath as string, configDir),
         filename: 'index.html',
         minify: true,
       }),
@@ -74,7 +74,7 @@ const generateBaseConfig = (config: CustomConfig) => {
           ],
         },
         {
-          test: /\.ts[x]?$/,
+          test: /\.[t|j]s[x]?$/,
           include: [resolve(join(workspace, rootDir), configDir)],
           use: [
             {

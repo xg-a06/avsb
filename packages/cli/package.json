@@ -1,6 +1,6 @@
 {
   "name": "@avsb/cli",
-  "version": "0.1.5",
+  "version": "0.1.9",
   "description": "a very simple build cli module",
   "main": "bin/index.js",
   "bin": {
@@ -29,7 +29,7 @@
     "clean": "rimraf ./node_modules"
   },
   "dependencies": {
-    "@avsb/build": "workspace:^0.1.5",
+    "@avsb/build": "workspace:^0.1.9",
     "@avsb/preview": "workspace:^0.1.5",
     "@avsb/serve": "workspace:^0.1.5",
     "@types/node": "^18.0.0",

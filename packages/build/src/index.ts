@@ -1,15 +1,22 @@
 import { resolve, dirname } from 'path';
-import { generateBuildConfig, CustomConfig, Webpack, Configuration, chalk } from '@avsb/utils';
+import { generateBuildConfig, generateLibBuildConfig, CustomConfig, Webpack, Configuration, chalk } from '@avsb/utils';
 
 interface BuildOptions {
   config: string;
+  lib: boolean;
 }
 
-const buildWebpack = async (options: CustomConfig) => {
-  let webpackConfig = generateBuildConfig(options);
+const buildWebpack = async (options: CustomConfig, isLib: boolean) => {
+  let webpackConfig;
+  if (isLib) {
+    webpackConfig = generateLibBuildConfig(options);
+  } else {
+    webpackConfig = generateBuildConfig(options);
+  }
   if (options.override) {
     webpackConfig = options.override(webpackConfig);
   }
+
   Webpack(webpackConfig as unknown as Configuration, (err, stats) => {
     if (err) throw err;
     if (!stats) throw new Error('no stats');
@@ -31,12 +38,12 @@ const buildWebpack = async (options: CustomConfig) => {
 };
 
 const build = async (options: BuildOptions) => {
-  const { config } = options;
+  const { config, lib } = options;
   const configPath = resolve(process.cwd(), config);
   const configDir = dirname(configPath);
   const customConfig: CustomConfig = await import(configPath);
   customConfig.configDir = configDir;
-  buildWebpack(customConfig);
+  buildWebpack(customConfig, lib);
 };
 
 export default build;

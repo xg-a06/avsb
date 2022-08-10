@@ -1,5 +1,13 @@
 # @avsb/build
 
+## 0.1.9
+
+### Patch Changes
+
+- feat: 增加库打包支持
+- Updated dependencies
+  - @avsb/utils@0.1.9
+
 ## 0.1.7
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @avsb/utils
 
+## 0.1.9
+
+### Patch Changes
+
+- feat: 增加库打包支持
+
 ## 0.1.8
 
 ### Patch Changes
