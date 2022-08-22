@@ -110,6 +110,7 @@ importers:
   packages/utils:
     specifiers:
       '@babel/core': ^7.17.5
+      '@babel/eslint-parser': ^7.18.9
       '@babel/plugin-proposal-class-properties': ^7.16.7
       '@babel/plugin-proposal-class-static-block': ^7.17.6
       '@babel/plugin-proposal-decorators': ^7.17.2
@@ -186,6 +187,7 @@ importers:
       websocket: ^1.0.34
     dependencies:
       '@babel/core': 7.18.5
+      '@babel/eslint-parser': 7.18.9_cz6e4qppzra6gosrrzcvbsxiom
       '@babel/plugin-proposal-class-properties': 7.17.12_@babel+core@7.18.5
       '@babel/plugin-proposal-class-static-block': 7.18.0_@babel+core@7.18.5
       '@babel/plugin-proposal-decorators': 7.18.2_@babel+core@7.18.5
@@ -303,6 +305,20 @@ packages:
       semver: 6.3.0
     transitivePeerDependencies:
       - supports-color
+    dev: false
+
+  /@babel/eslint-parser/7.18.9_cz6e4qppzra6gosrrzcvbsxiom:
+    resolution: {integrity: sha512-KzSGpMBggz4fKbRbWLNyPVTuQr6cmCcBhOyXTw/fieOVaw5oYAwcAj4a7UKcDYCPxQq+CG1NCDZH9e2JTXquiQ==}
+    engines: {node: ^10.13.0 || ^12.13.0 || >=14.0.0}
+    peerDependencies:
+      '@babel/core': '>=7.11.0'
+      eslint: ^7.5.0 || ^8.0.0
+    dependencies:
+      '@babel/core': 7.18.5
+      eslint: 8.18.0
+      eslint-scope: 5.1.1
+      eslint-visitor-keys: 2.1.0
+      semver: 6.3.0
     dev: false
 
   /@babel/generator/7.18.2:

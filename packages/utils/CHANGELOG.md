@@ -1,5 +1,11 @@
 # @avsb/utils
 
+## 0.1.10
+
+### Patch Changes
+
+- build: 加入@babel/eslint-parser 包
+
 ## 0.1.9
 
 ### Patch Changes
