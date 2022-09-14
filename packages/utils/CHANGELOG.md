@@ -1,5 +1,11 @@
 # @avsb/utils
 
+## 0.1.11
+
+### Patch Changes
+
+- build: 调整 babel runtime 包
+
 ## 0.1.10
 
 ### Patch Changes
