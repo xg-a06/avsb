@@ -149,6 +149,7 @@ importers:
       chalk: 4.0.0
       clean-webpack-plugin: ^4.0.0
       copy-webpack-plugin: ^10.2.4
+      core-js: ^3.25.1
       cross-env: ^7.0.3
       css-loader: ^6.7.0
       css-minimizer-webpack-plugin: ^3.4.1
@@ -226,6 +227,7 @@ importers:
       chalk: 4.0.0
       clean-webpack-plugin: 4.0.0_webpack@5.72.1
       copy-webpack-plugin: 10.2.4_webpack@5.72.1
+      core-js: 3.25.1
       cross-env: 7.0.3
       css-loader: 6.7.1_webpack@5.72.1
       css-minimizer-webpack-plugin: 3.4.1_webpack@5.72.1
@@ -3574,6 +3576,11 @@ packages:
 
   /core-js-pure/3.25.1:
     resolution: {integrity: sha512-7Fr74bliUDdeJCBMxkkIuQ4xfxn/SwrVg+HkJUAoNEXVqYLv55l6Af0dJ5Lq2YBUW9yKqSkLXaS5SYPK6MGa/A==}
+    requiresBuild: true
+    dev: false
+
+  /core-js/3.25.1:
+    resolution: {integrity: sha512-sr0FY4lnO1hkQ4gLDr24K0DGnweGO1QwSj5BpfQjpSJPdqWalja4cTps29Y/PJVG/P7FYlPDkH3hO+Tr0CvDgQ==}
     requiresBuild: true
     dev: false
 

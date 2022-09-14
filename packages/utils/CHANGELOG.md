@@ -1,5 +1,11 @@
 # @avsb/utils
 
+## 0.1.12
+
+### Patch Changes
+
+- build: 增加 core-js 包
+
 ## 0.1.11
 
 ### Patch Changes
