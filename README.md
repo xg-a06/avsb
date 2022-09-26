@@ -1,2 +1,2 @@
 # avsb
-a very simple build
+a very simple bundle
