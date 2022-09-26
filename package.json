@@ -1,7 +1,7 @@
 {
   "name": "avsb",
   "version": "0.1.0",
-  "description": "a very simple build",
+  "description": "a very simple bundle",
   "main": "index.js",
   "private": true,
   "workspaces": [
